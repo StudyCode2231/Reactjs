@@ -1,15 +1,13 @@
 import './App.css';
 import Video from './components/Video';
-import videos from './data/data';
-
+import videos from './data/data'
 function App() {
   
   return (
-    <div className='App'>
+    <div className="App">
       <div>Videos</div>
       {
-        videos.map(
-          video=><Video>
+        videos.map(video=><Video
           key={video.id}
           title={video.title}
           views={video.views}
@@ -17,9 +15,9 @@ function App() {
           channel={video.channel}
           verified={video.verified}
           id={video.id}
-          </Video>
-        )
+        ></Video>)
       }
+    
     </div>
   );
 }

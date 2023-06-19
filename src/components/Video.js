@@ -20,15 +20,3 @@ function Video({title,id,channel="Coder Dost",views,time,verified}) {
 }
 
 export default Video;
-
-//  {/* Step-1 Type :
-//       let verify = true;
-//       let classJSX;
-//       if(verify){
-//         classJSX= <div className="channel">{channel}</div>
-//       }else{
-//         classJSK = <div className="channel">{channel}✅</div>
-//       } */}
-//       {/*Step-2 of verfication
-//        {verified ? <div className="channel">{channel}</div> : <div className="channel">{channel}✅</div> } */}
-//       {/*Step-3 :easily way of writing */}
