@@ -1,23 +1,26 @@
+import { useState } from 'react';
 import './App.css';
-import Video from './components/Video';
-import videos from './data/data'
+import AddVideo from './components/AddVideo';
+import videoDB from './data/data';
+import VideoList from './components/VideoList';
 function App() {
-  
+  console.log('render App')
+
+  const [videos,setVideos] = useState(videoDB);
+
+  function addVideos(video){
+      setVideos([
+            ...videos,
+            {...video, id: videos.length+1}
+          ]);
+  }
+
   return (
-    <div className="App">
-      <div>Videos</div>
-      {
-        videos.map(video=><Video
-          key={video.id}
-          title={video.title}
-          views={video.views}
-          time={video.time}
-          channel={video.channel}
-          verified={video.verified}
-          id={video.id}
-        ></Video>)
-      }
-    
+    <div className="App" onClick={()=>console.log('App')}>
+       <AddVideo addVideos={addVideos}></AddVideo>
+       <VideoList videos={videos}></VideoList>
+
+
     </div>
   );
 }
