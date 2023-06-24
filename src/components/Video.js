@@ -1,13 +1,14 @@
 import './Video.css';
 
-function Video({children,title,id,channel="Coder Dost",views,time,verified ,deleteVideo,editVideo}) {
-   
+function Video({title,id,channel="Coder Dost",views,time,verified,children,dispatch,editVideo}) {
+  console.log('render Video')
+
   
   return (
       <>
       <div className='container'>
-      <button className='close' onClick={()=>deleteVideo(id)}>X</button>  
-      <button className='edit' onClick={()=>editVideo(id)}>Edit</button> 
+      <button className='close' onClick={()=>dispatch({type:'DELETE',payload:id})}>X</button>  
+      <button className='edit' onClick={()=>editVideo(id)}>Edit</button>  
       <div className="pic">
       <img src={`https://picsum.photos/id/${id}/160/90`} alt="Katherine Johnson" />
       </div>
