@@ -1,11 +1,13 @@
 import './Video.css';
 
-function Video({children,title,id,channel="Coder Dost",views,time,verified}) {
+function Video({children,title,id,channel="Coder Dost",views,time,verified ,deleteVideo,editVideo}) {
    
   
   return (
       <>
       <div className='container'>
+      <button className='close' onClick={()=>deleteVideo(id)}>X</button>  
+      <button className='edit' onClick={()=>editVideo(id)}>Edit</button> 
       <div className="pic">
       <img src={`https://picsum.photos/id/${id}/160/90`} alt="Katherine Johnson" />
       </div>
